@@ -31,6 +31,7 @@ const Meta = ({ site, title, subtitle }) => {
       ]}
     >
       <script
+        id="snipcart"
         src="https://cdn.snipcart.com/themes/v3.0.2/default/snipcart.js"
         data-api-key="NzI5M2QyOWUtMjc4Ny00NWFiLWI5NGYtOGVlYTFkZTY3NGViNjM3MDkxMzQwOTgyNTg4NjIy"
       ></script>

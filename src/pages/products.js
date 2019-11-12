@@ -12,7 +12,6 @@ class Products extends React.Component {
   render() {
     const { location, data } = this.props
     const lunitas = get(data, 'lunitas.childImageSharp.fixed')
-
     return (
       <Layout location={location}>
         <Meta site={siteMetadata} title="Profile" />
@@ -22,7 +21,7 @@ class Products extends React.Component {
             <div className="row">
               <div className="col-md-6 mx-auto text-center p-3">
                 <div className="card">
-                  <img src={lunitas} className="card-img-top" alt="Lunitas" />
+                  <Img sizes={lunitas} className="card-img-top" alt="Lunitas" />
                   <div className="card-body">
                     <h5 className="card-title">Card title</h5>
                     <p className="card-text">
@@ -30,12 +29,11 @@ class Products extends React.Component {
                       make up the bulk of the cards content.
                     </p>
                     <button
-                      className="btn btn-primary"
+                      type="button"
+                      className="btn btn-primary snipcart-add-item"
                       data-item-id={2}
                       data-item-price={'20'}
-                      data-item-image={
-                        'https://freesvg.org/black-android-phone'
-                      }
+                      data-item-image={lunitas.src}
                       data-item-name={'android'}
                       data-item-description={'my super sa'}
                       data-item-url={'http://lunitasbakery.com/android'}
@@ -47,7 +45,7 @@ class Products extends React.Component {
               </div>
               <div className="col-md-6 mx-auto text-center p-3">
                 <div className="card">
-                  <img src={lunitas} className="card-img-top" alt="Lunitas" />
+                  <Img sizes={lunitas} className="card-img-top" alt="Lunitas" />
                   <div className="card-body">
                     <h5 className="card-title">Card title</h5>
                     <p className="card-text">
@@ -55,12 +53,11 @@ class Products extends React.Component {
                       make up the bulk of the cards content.
                     </p>
                     <button
-                      className="btn btn-primary"
+                      type="button"
+                      className="btn btn-primary snipcart-add-item"
                       data-item-id={1}
                       data-item-price={'20'}
-                      data-item-image={
-                        'https://pixabay.com/photos/iphone-iphone-x-mockup-mobile-2854322/'
-                      }
+                      data-item-image={lunitas.src}
                       data-item-name={'Iphone'}
                       data-item-description={'my super duper'}
                       data-item-url={'http://lunitasbakery.com/iphone'}
