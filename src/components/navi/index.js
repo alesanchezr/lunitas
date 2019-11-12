@@ -4,12 +4,13 @@ import style from './style.scss'
 
 class Navi extends React.Component {
   render() {
-    const { location, title } = this.props
+    const { location, title, subtitle } = this.props
     return (
       <nav className="navbar">
         <div className="text-center d-block w-100">
           <Link className="text-center" to="/">
             <h1 className="navbar-brand">{title}</h1>
+            <h3 className="subtitle">{subtitle}</h3>
           </Link>
         </div>
         <div className="container">

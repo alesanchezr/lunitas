@@ -38,7 +38,7 @@ export const pageQuery = graphql`
         description
         url: siteUrl
         author
-        twitter
+        instagram
         adsense
       }
     }

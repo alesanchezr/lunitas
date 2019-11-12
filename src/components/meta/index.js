@@ -2,7 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import get from 'lodash/get'
 
-const Meta = ({ site, title }) => {
+const Meta = ({ site, title, subtitle }) => {
   const siteTitle = get(site, 'title')
   title = title ? `${title} | ${siteTitle}` : siteTitle
   return (

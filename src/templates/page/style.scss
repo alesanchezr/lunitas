@@ -1,5 +1,6 @@
 @import 'scss/colors.scss';
 @import 'scss/fonts.scss';
+@import 'scss/buttons.scss';
 
 section {
   padding: 50px 0;
@@ -16,19 +17,19 @@ section {
   }
 
   .cover-image {
-    height: 50vh;
+    height: 80vh;
     width: 100%;
     opacity: 0.6;
     & > img {
       object-fit: cover !important;
       object-position: 0% 50% !important;
     }
-    max-height: 300px;
   }
 
   .cover-over {
     position: absolute;
-    top: 2em;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   hr {

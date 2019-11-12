@@ -1,10 +1,11 @@
 module.exports = {
   siteMetadata: {
     title: 'Lunitas Bakery',
-    description: 'Delicius Handmade Fine Bake',
+    description: 'Delicius Homemade Fine Bakery',
+    subtitle: 'Delicius Handmade Fine Bakery',
     siteUrl: 'https://gatstrap.netlify.com',
-    author: 'jaxx2104',
-    twitter: 'jaxx2104',
+    author: 'lunitasbakery',
+    instagram: 'lunitasbakery',
     adsense: '',
   },
   pathPrefix: '/',

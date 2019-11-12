@@ -20,3 +20,13 @@ $yellow: #ffab00 !default;
 $green: #8bc34a !default;
 $teal: #009688 !default;
 $cyan: #00bcd4 !default;
+
+// Reassign color vars to semantic color scheme
+$color-primary: $pink;
+$color-secondary: $gray-600;
+$color-success: $green;
+$color-info: $cyan;
+$color-warning: $yellow;
+$color-danger: $red;
+$color-light: $gray-100;
+$color-dark: $gray-800;

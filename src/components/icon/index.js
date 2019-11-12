@@ -12,7 +12,7 @@ import {
   faNode,
   faPhp,
   faReact,
-  faTwitter,
+  faInstagram,
   faVuejs,
 } from '@fortawesome/free-brands-svg-icons'
 import './style.scss'
@@ -27,7 +27,7 @@ library.add(
   faNode,
   faPhp,
   faReact,
-  faTwitter,
+  faInstagram,
   faVuejs
 )
 
