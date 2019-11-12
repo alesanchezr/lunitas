@@ -30,7 +30,10 @@ const Meta = ({ site, title, subtitle }) => {
         },
       ]}
     >
-      <script src="https://cdn.snipcart.com/themes/v3.0.2/default/snipcart.js"></script>
+      <script
+        src="https://cdn.snipcart.com/themes/v3.0.2/default/snipcart.js"
+        data-api-key="NzI5M2QyOWUtMjc4Ny00NWFiLWI5NGYtOGVlYTFkZTY3NGViNjM3MDkxMzQwOTgyNTg4NjIy"
+      ></script>
       <link
         rel="stylesheet"
         href="https://cdn.snipcart.com/themes/v3.0.2/default/snipcart.css"
