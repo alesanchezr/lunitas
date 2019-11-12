@@ -24,6 +24,11 @@ class Layout extends React.Component {
     const { children } = this.props
     return (
       <div>
+        <div
+          id="snipcart"
+          data-api-key="NzI5M2QyOWUtMjc4Ny00NWFiLWI5NGYtOGVlYTFkZTY3NGViNjM3MDkxMzQwOTgyNTg4NjIy"
+          hidden
+        ></div>
         <Navi
           title={siteMetadata.title}
           subtitle={siteMetadata.subtitle}

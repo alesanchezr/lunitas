@@ -21,7 +21,7 @@ class Products extends React.Component {
             <div className="row">
               <div className="col-md-6 mx-auto text-center p-3">
                 <div className="card">
-                  <Img sizes={lunitas} className="card-img-top" alt="Lunitas" />
+                  <Img sizes={lunitas} className="card-img-top" />
                   <div className="card-body">
                     <h5 className="card-title">Card title</h5>
                     <p className="card-text">
@@ -45,7 +45,6 @@ class Products extends React.Component {
               </div>
               <div className="col-md-6 mx-auto text-center p-3">
                 <div className="card">
-                  <Img sizes={lunitas} className="card-img-top" alt="Lunitas" />
                   <div className="card-body">
                     <h5 className="card-title">Card title</h5>
                     <p className="card-text">
@@ -79,9 +78,9 @@ export default Products
 
 export const query = graphql`
   query ProductsPageQuery {
-    lunitas: file(name: { eq: "lunitas" }) {
+    lunitas: file(name: { eq: "marquesa" }) {
       childImageSharp {
-        fixed(width: 120, height: 120) {
+        fixed(width: 220, height: 220) {
           ...GatsbyImageSharpFixed_withWebp
         }
       }
