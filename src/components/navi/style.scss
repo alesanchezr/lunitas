@@ -1,0 +1,48 @@
+@import 'scss/colors.scss';
+@import 'scss/fonts.scss';
+
+.navbar{
+  border-bottom: 4px solid black;
+  position: relative;
+  &::after{
+    content: " ";
+    border-bottom: black dotted 1px;
+    height: 3px;
+    width: 100vw;
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+  }
+  h1.navbar-brand{
+    font-family: 'Pacifico', cursive;
+    color: black;
+    margin: 20px 0px 20px 0px;
+    font-size: 3rem;
+  }
+  .navbar-nav{
+    margin: 10px 0px 10px 0px;
+    .nav-item{
+      font-size: $h2-font-size;
+      margin: 0px 15px 0px 15px;
+      font-weight: $font-weight-bold;
+      position: relative;
+      &::before{
+        content: '';
+        position: absolute;
+        left: -15px;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: $pink;
+      }
+      &:first-child{
+        &::before{
+          content: initial;
+        }
+      }
+    }
+  }
+}

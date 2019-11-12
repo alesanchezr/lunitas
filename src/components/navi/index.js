@@ -1,35 +1,54 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import style from './style.scss'
 
 class Navi extends React.Component {
   render() {
     const { location, title } = this.props
     return (
-      <nav className="navbar navbar-expand navbar-dark flex-column flex-md-row bg-primary">
-        <div className="container">
+      <nav className="navbar">
+        <div className="text-center d-block w-100">
           <Link className="text-center" to="/">
-            <h1 className="navbar-brand mb-0">{title}</h1>
+            <h1 className="navbar-brand">{title}</h1>
           </Link>
-          <div className="navbar-nav-scroll">
-            <ul className="navbar-nav bd-navbar-nav flex-row">
+        </div>
+        <div className="container">
+          <div className="navbar-nav w-100">
+            <ul className="nav justify-content-center">
               <li
-                className={
-                  location.pathname === '/' ? 'nav-item active' : 'nav-item'
-                }
+                className={`nav-item ${
+                  location.pathname === '/' ? 'active' : ''
+                }`}
               >
                 <Link to="/" className="nav-link">
                   Home
                 </Link>
               </li>
               <li
-                className={
-                  location.pathname === '/profile/'
-                    ? 'nav-item active'
-                    : 'nav-item'
-                }
+                className={`nav-item ${
+                  location.pathname === '/profile' ? 'active' : ''
+                }`}
               >
                 <Link to="/profile/" className="nav-link">
-                  Profile
+                  About Us
+                </Link>
+              </li>
+              <li
+                className={`nav-item ${
+                  location.pathname === '/products' ? 'active' : ''
+                }`}
+              >
+                <Link to="/products/" className="nav-link">
+                  Products
+                </Link>
+              </li>
+              <li
+                className={`nav-item ${
+                  location.pathname === '/' ? '/services' : ''
+                }`}
+              >
+                <Link to="/services/" className="nav-link">
+                  Services
                 </Link>
               </li>
             </ul>

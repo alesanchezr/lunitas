@@ -67,6 +67,7 @@ html,
 body {
   height: 100%;
   width: 100%;
+  font-family: 'Roboto Slab', serif;
 }
 
 * {
@@ -78,6 +79,10 @@ p {
   font-size: 16px;
   line-height: 1.5;
   margin-bottom: 20px;
+}
+
+a {
+  color: $pink;
 }
 
 img {

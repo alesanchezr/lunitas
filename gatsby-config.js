@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatstrap',
-    description: 'Gatsby starter for bootstrap a blog',
+    title: 'Lunitas Bakery',
+    description: 'Delicius Handmade Fine Bake',
     siteUrl: 'https://gatstrap.netlify.com',
     author: 'jaxx2104',
     twitter: 'jaxx2104',
@@ -84,6 +84,14 @@ module.exports = {
         mergeSecurityHeaders: true,
         mergeLinkHeaders: true,
         mergeCachingHeaders: true,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        google: {
+          families: ['Pacifico', 'Roboto Slab'],
+        },
       },
     },
     'gatsby-plugin-catch-links',
