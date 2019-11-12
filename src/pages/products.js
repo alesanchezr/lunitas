@@ -33,7 +33,9 @@ class Products extends React.Component {
                       className="btn btn-primary"
                       data-item-id={2}
                       data-item-price={'20'}
-                      data-item-image={post.frontmatter.image}
+                      data-item-image={
+                        'https://freesvg.org/black-android-phone'
+                      }
                       data-item-name={'android'}
                       data-item-description={'my super sa'}
                       data-item-url={'http://lunitasbakery.com/android'}
@@ -56,7 +58,9 @@ class Products extends React.Component {
                       className="btn btn-primary"
                       data-item-id={1}
                       data-item-price={'20'}
-                      data-item-image={post.frontmatter.image}
+                      data-item-image={
+                        'https://pixabay.com/photos/iphone-iphone-x-mockup-mobile-2854322/'
+                      }
                       data-item-name={'Iphone'}
                       data-item-description={'my super duper'}
                       data-item-url={'http://lunitasbakery.com/iphone'}
