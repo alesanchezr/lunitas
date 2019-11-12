@@ -29,7 +29,18 @@ const Meta = ({ site, title, subtitle }) => {
           content: `${get(site, 'siteUrl')}/img/profile.jpg`,
         },
       ]}
-    />
+    >
+      <script src="https://cdn.snipcart.com/themes/v3.0.2/default/snipcart.js"></script>
+      <link
+        rel="stylesheet"
+        href="https://cdn.snipcart.com/themes/v3.0.2/default/snipcart.css"
+      />
+      <div
+        id="snipcart"
+        data-api-key="NzI5M2QyOWUtMjc4Ny00NWFiLWI5NGYtOGVlYTFkZTY3NGViNjM3MDkxMzQwOTgyNTg4NjIy"
+        hidden
+      ></div>
+    </Helmet>
   )
 }
 export default Meta
