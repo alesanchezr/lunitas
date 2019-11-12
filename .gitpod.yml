@@ -1,0 +1,4 @@
+tasks:
+  - command: >
+      npm install -g gatsby-cli;
+      npm install -g now;
