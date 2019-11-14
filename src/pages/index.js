@@ -1,4 +1,4 @@
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import get from 'lodash/get'
 import Img from 'gatsby-image'
 import React from 'react'
@@ -8,10 +8,15 @@ import Layout from 'components/layout'
 import Meta from 'components/meta'
 import Icon from 'components/icon'
 
+import { FaSearchLocation } from 'react-icons/fa'
+import { FaPhone } from 'react-icons/fa'
+
 class Home extends React.Component {
   render() {
     const { location, data } = this.props
     const marquesa = get(data, 'marquesa.childImageSharp.fixed')
+    const arrow = get(data, 'arrow.childImageSharp.fixed')
+    console.log('the arrow', arrow)
 
     return (
       <Layout location={location}>
@@ -31,12 +36,21 @@ class Home extends React.Component {
           </section>
           <section id="repos">
             <div className="container">
+              <div style={{ top: '-150px' }} className="arrow">
+                <Img
+                  sizes={arrow}
+                  style={{ height: '150px', width: '100px' }}
+                  className="mx-auto"
+                />
+              </div>
               <div className="row mb-3">
                 <div className="col-4 text-center mx-auto">
-                  <button className="btn btn-primary">Make an Order Now</button>
+                  <Link className="btn btn-primary" to="/products">
+                    Make an Order Now
+                  </Link>
                 </div>
               </div>
-              <h1 className="mt-3 text-center">Welcome</h1>
+              <h1 className="text-center welcome-title">Welcome</h1>
               <div className="row">
                 <div className="col-md-6 text-left">
                   What makes the perfect cupcake? Free-range eggs, no
@@ -45,9 +59,15 @@ class Home extends React.Component {
                   decorate from scratch each day. It's home baking done Cupcakes
                   Bakery way.
                 </div>
-                <div className="col-md-6 text-left">
-                  363 Aragon Ave, Coral Gables, FL.
-                </div>
+                <ul className="col-md-6 text-left contact-info">
+                  <li>
+                    <FaSearchLocation />
+                    363 Aragon Ave, Coral Gables, FL.
+                  </li>
+                  <li>
+                    <FaPhone /> +1 (786) 681-7901
+                  </li>
+                </ul>
               </div>
             </div>
           </section>
@@ -64,6 +84,13 @@ export const query = graphql`
     marquesa: file(name: { eq: "marquesa" }) {
       childImageSharp {
         fixed(width: 320, height: 220) {
+          ...GatsbyImageSharpFixed_withWebp
+        }
+      }
+    }
+    arrow: file(name: { eq: "arrow" }) {
+      childImageSharp {
+        fixed(width: 200, height: 220) {
           ...GatsbyImageSharpFixed_withWebp
         }
       }

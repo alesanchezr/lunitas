@@ -103,5 +103,12 @@ module.exports = {
     'gatsby-plugin-sitemap',
     'gatsby-plugin-twitter',
     'gatsby-transformer-sharp',
+    {
+      resolve: 'gatsby-plugin-snipcart',
+      options: {
+        apiKey:
+          'NzI5M2QyOWUtMjc4Ny00NWFiLWI5NGYtOGVlYTFkZTY3NGViNjM3MDkxMzQwOTgyNTg4NjIy',
+      },
+    },
   ],
 }

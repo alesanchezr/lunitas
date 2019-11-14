@@ -3,6 +3,7 @@ import emergence from 'emergence.js'
 
 import Navi from 'components/navi'
 import Footer from 'components/footer'
+import Cart from 'components/cart'
 import { siteMetadata } from '../../../gatsby-config'
 
 import 'modern-normalize/modern-normalize.css'
@@ -36,6 +37,7 @@ class Layout extends React.Component {
         />
         {children}
         <Footer title={siteMetadata.title} author={siteMetadata.author} />
+        <Cart />
       </div>
     )
   }
