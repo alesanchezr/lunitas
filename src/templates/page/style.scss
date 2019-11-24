@@ -1,6 +1,7 @@
 @import 'scss/colors.scss';
 @import 'scss/fonts.scss';
 @import 'scss/buttons.scss';
+@import 'scss/breakpoints';
 
 section {
   padding: 50px 0;
@@ -18,6 +19,9 @@ section {
 
   .cover-image {
     height: 80vh;
+    @include respond-below(sm) {
+      height: 40vh;
+    }
     width: 100%;
     opacity: 0.6;
     & > img {

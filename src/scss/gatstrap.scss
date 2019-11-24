@@ -20,17 +20,6 @@ $enable-hover-media-query: false !default;
 $enable-grid-classes: true !default;
 $enable-print-styles: true !default;
 
-// Grid containers
-//
-// Define the maximum width of `.container` for different screen sizes.
-
-$container-max-widths: (
-  sm: 540px,
-  md: 640px,
-  lg: 710px,
-  xl: 780px,
-) !default;
-
 // Body
 //
 // Settings for the `<body>` element.
@@ -49,6 +38,7 @@ $link-hover-decoration: none !default;
 // Fonts
 //
 @import './fonts.scss';
+@import './colors.scss';
 
 @import 'node_modules/bootstrap/scss/bootstrap.scss';
 
@@ -62,6 +52,14 @@ body {
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+textarea, select, input, button {
+  outline: none;
+  &:focus {
+    outline-color: transparent;
+    outline-style: none;
+  }
 }
 
 p {
@@ -88,3 +86,10 @@ img:hover {
   border-bottom: 4px solid black;
   position: relative;
 }
+
+.bg-primary{
+  background: $color-primary !important;
+}
+
+
+

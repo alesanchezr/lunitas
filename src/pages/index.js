@@ -14,16 +14,14 @@ import { FaPhone } from 'react-icons/fa'
 class Home extends React.Component {
   render() {
     const { location, data } = this.props
-    const marquesa = get(data, 'marquesa.childImageSharp.fixed')
+    const background = get(data, 'background.childImageSharp.fixed')
     const arrow = get(data, 'arrow.childImageSharp.fixed')
-    console.log('the arrow', arrow)
-
     return (
       <Layout location={location}>
         <Meta site={siteMetadata} title="Profile" />
         <div>
           <section id="features" className="text-center jumboimage">
-            <Img sizes={marquesa} className="cover-image" />
+            <Img sizes={background} className="cover-image" />
             <div className="row cover-over w-100">
               <div className="col-md-6 mx-auto text-center bg-white boxy text-dark p-3">
                 <h2 className="section-heading">Baked Fresh to Order</h2>
@@ -44,8 +42,8 @@ class Home extends React.Component {
                 />
               </div>
               <div className="row mb-3">
-                <div className="col-4 text-center mx-auto">
-                  <Link className="btn btn-primary" to="/products">
+                <div className="col-12 text-center mx-auto">
+                  <Link className="btn btn-primary btn-lg" to="/products">
                     Make an Order Now
                   </Link>
                 </div>
@@ -81,7 +79,7 @@ export default Home
 
 export const query = graphql`
   query HomePageQuery {
-    marquesa: file(name: { eq: "marquesa" }) {
+    background: file(name: { eq: "marquesa" }) {
       childImageSharp {
         fixed(width: 320, height: 220) {
           ...GatsbyImageSharpFixed_withWebp

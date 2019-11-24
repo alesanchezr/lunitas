@@ -12,29 +12,51 @@ class Profile extends React.Component {
   render() {
     const { location, data } = this.props
     const profile = get(data, 'profile.childImageSharp.fixed')
-    const work1 = get(data, 'work1.childImageSharp.sizes')
-    const work2 = get(data, 'work2.childImageSharp.sizes')
-    const back1 = get(data, 'back1.childImageSharp.sizes')
-    const back2 = get(data, 'back2.childImageSharp.sizes')
+    const background = get(data, 'background.childImageSharp.sizes')
+    const background2 = get(data, 'backgroundTable.childImageSharp.sizes')
+    const cupcake1 = get(data, 'cupcake1.childImageSharp.sizes')
+    const cupcake2 = get(data, 'cupcake2.childImageSharp.sizes')
+    const cupcake3 = get(data, 'cupcake3.childImageSharp.sizes')
 
     return (
       <Layout location={location}>
         <Meta site={siteMetadata} title="Profile" />
         <div>
+          <section id="features" className="jumboimage">
+            <Img sizes={background} className="cover-image" />
+            <div className="container">
+              <div className="row cover-over">
+                <div className="col-md-12 text-left">
+                  <h2 className="section-heading">Handmade with Love</h2>
+                  <p>Family recipes since 1960</p>
+                </div>
+              </div>
+            </div>
+          </section>
           <section className="text-center">
             <div className="container">
-              <Img fixed={profile} className="rounded-circle" />
-              <h1>jaxx2104</h1>
-              <p className="lead text-muted">Front-end engineer.</p>
-              <div>
-                <a
-                  ref="twButton"
-                  href="https://twitter.com/jaxx2104"
-                  className="twitter-follow-button"
-                  data-show-count="false"
-                >
-                  Follow @jaxx2104
-                </a>
+              <div className="row">
+                <div className="col-6">
+                  What makes the perfect cupcake? Free-range eggs, no
+                  preservatives and high-quality natural ingredients go into our
+                  freshly baked sponges, which we lovingly hand bake and
+                  decorate from scratch each day. It's home baking done Cupcakes
+                  Bakery way.
+                </div>
+                <div className="col-6">
+                  <Img fixed={profile} className="rounded-circle" />
+                  <h1>PatyBradley</h1>
+                  <p className="lead text-muted">Baker.</p>
+                  <div>
+                    <a
+                      href="https://instagram.com/lunitasbakery"
+                      className="twitter-follow-button"
+                      data-show-count="false"
+                    >
+                      Follow @lunitasbakery
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </section>
@@ -81,7 +103,7 @@ class Profile extends React.Component {
           </section>
 
           <section id="features" className="text-center jumboimage">
-            <Img sizes={back1} className="cover-image" />
+            <Img sizes={background2} className="cover-image" />
             <div className="container">
               <div className="row cover-over">
                 <div className="col-md-12 text-left">
@@ -114,11 +136,11 @@ class Profile extends React.Component {
             <div className="container">
               <div className="row">
                 <div className="col-md-6 slide-left" data-emergence="hidden">
-                  <Img sizes={work1} />
+                  <Img sizes={cupcake1} />
                   <p>Yomu</p>
                 </div>
                 <div className="col-md-6 slide-right" data-emergence="hidden">
-                  <Img sizes={work2} />
+                  <Img sizes={cupcake2} />
                   <p>Detector</p>
                 </div>
               </div>
@@ -138,22 +160,6 @@ class Profile extends React.Component {
               </div>
             </div>
           </section>
-          <section id="features" className="jumboimage">
-            <Img sizes={back2} className="cover-image" />
-            <div className="container">
-              <div className="row cover-over">
-                <div className="col-md-12 text-left">
-                  <h2 className="section-heading">Degree Works</h2>
-                  <p>
-                    過去の制作は
-                    <a className="text-white" href="https://old.jaxx2104.info/">
-                      こちら
-                    </a>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
         </div>
       </Layout>
     )
@@ -164,42 +170,42 @@ export default Profile
 
 export const query = graphql`
   query ProfilePageQuery {
-    profile: file(name: { eq: "profile" }) {
+    profile: file(name: { eq: "paty" }) {
       childImageSharp {
-        fixed(width: 120, height: 120) {
+        fixed(width: 120, height: 170) {
           ...GatsbyImageSharpFixed_withWebp
         }
       }
     }
-    work1: file(name: { eq: "work1" }) {
+    background: file(name: { eq: "bg-cupcake" }) {
       childImageSharp {
         sizes(quality: 100) {
           ...GatsbyImageSharpSizes_withWebp
         }
       }
     }
-    work2: file(name: { eq: "work2" }) {
+    cupcake1: file(name: { eq: "cupcake1" }) {
       childImageSharp {
         sizes(quality: 100) {
           ...GatsbyImageSharpSizes_withWebp
         }
       }
     }
-    work3: file(name: { eq: "work3" }) {
+    cupcake2: file(name: { eq: "cupcake2" }) {
       childImageSharp {
         sizes(quality: 100) {
           ...GatsbyImageSharpSizes_withWebp
         }
       }
     }
-    back1: file(name: { eq: "back1" }) {
+    cupcake3: file(name: { eq: "cupcake3" }) {
       childImageSharp {
         sizes(quality: 100) {
           ...GatsbyImageSharpSizes_withWebp
         }
       }
     }
-    back2: file(name: { eq: "back2" }) {
+    backgroundTable: file(name: { eq: "rustic-table" }) {
       childImageSharp {
         sizes(quality: 100) {
           ...GatsbyImageSharpSizes_withWebp

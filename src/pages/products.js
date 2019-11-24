@@ -12,92 +12,63 @@ import Product from 'components/product'
 class Products extends React.Component {
   render() {
     const { location, data } = this.props
-    const lunitas = get(data, 'lunitas.childImageSharp.fixed')
+    const lunitaImg = get(data, 'lunitas.childImageSharp.fixed')
+    const marquesaImg = get(data, 'marquesa.childImageSharp.fixed')
+    const brownieImg = get(data, 'chocolate.childImageSharp.fixed')
+    const appleImg = get(data, 'apple.childImageSharp.fixed')
     return (
       <Layout location={location}>
         <Meta site={siteMetadata} title="Profile" />
         <div>
-          <section id="cakes" className="text-center container">
-            <h2>Cakes</h2>
+          <section className="text-center p-0">
             <div className="row">
-              <div className="col-md-6 mx-auto text-center p-3">
+              <div className="col-12 mx-auto text-center">
                 <Product
-                  title="Lunitas"
-                  image={lunitas}
+                  title="Lunita"
+                  image={lunitaImg}
                   id={1}
                   price={'250'}
-                  description={'asdasd'}
+                  description={
+                    'Fine Almond cookies, out most famost recipe so soft that it will break when in your mouth.'
+                  }
                   url=""
                 />
               </div>
-              <div className="col-md-6 mx-auto text-center p-3">
-                <div className="card">
-                  <div className="card-body">
-                    <h5 className="card-title">Marquesa</h5>
-                    <p className="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the cards content.
-                    </p>
-                    <button
-                      type="button"
-                      className="btn btn-primary snipcart-add-item"
-                      data-item-id={1}
-                      data-item-price={'20'}
-                      data-item-image={lunitas.src}
-                      data-item-name={'Iphone'}
-                      data-item-description={'my super duper'}
-                      data-item-url={'http://lunitasbakery.com/iphone'}
-                    >
-                      Add To Cart
-                    </button>
-                  </div>
-                </div>
+              <div className="col-12 mx-auto text-center">
+                <Product
+                  title="Hard Markesa"
+                  image={marquesaImg}
+                  id={1}
+                  price={'250'}
+                  description={
+                    'With the perfect combination between dark and milk chocolate and frezerd rock hard. This is how the Chocolate Marquesa should be made'
+                  }
+                  url=""
+                />
               </div>
-              <div className="col-md-6 mx-auto text-center p-3">
-                <div className="card">
-                  <div className="card-body">
-                    <h5 className="card-title">Apple Cake</h5>
-                    <p className="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the cards content.
-                    </p>
-                    <button
-                      type="button"
-                      className="btn btn-primary snipcart-add-item"
-                      data-item-id={1}
-                      data-item-price={'20'}
-                      data-item-image={lunitas.src}
-                      data-item-name={'Iphone'}
-                      data-item-description={'my super duper'}
-                      data-item-url={'http://lunitasbakery.com/iphone'}
-                    >
-                      Add To Cart
-                    </button>
-                  </div>
-                </div>
+              <div className="col-12 mx-auto text-center">
+                <Product
+                  title="Chocolate Joy"
+                  image={brownieImg}
+                  id={1}
+                  price={'250'}
+                  description={
+                    'Inspired on a 50 year old brownie recipe, this Chocolate cake will remind you of your chilhood but with a modern taste that makes this our most popular cake.'
+                  }
+                  url=""
+                />
               </div>
-              <div className="col-md-6 mx-auto text-center p-3">
-                <div className="card">
-                  <div className="card-body">
-                    <h5 className="card-title">Brownie Forge</h5>
-                    <p className="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the cards content.
-                    </p>
-                    <button
-                      type="button"
-                      className="btn btn-primary snipcart-add-item"
-                      data-item-id={1}
-                      data-item-price={'20'}
-                      data-item-image={lunitas.src}
-                      data-item-name={'Iphone'}
-                      data-item-description={'my super duper'}
-                      data-item-url={'http://lunitasbakery.com/iphone'}
-                    >
-                      Add To Cart
-                    </button>
-                  </div>
-                </div>
+              <div className="col-12 mx-auto text-center">
+                <Product
+                  title="Apple Cake"
+                  image={appleImg}
+                  id={1}
+                  price={'250'}
+                  description={
+                    'The Royal Crown, family recipe that combines apple tast with the traditional coffe cake'
+                  }
+                  url=""
+                />
               </div>
             </div>
           </section>
@@ -111,7 +82,28 @@ export default Products
 
 export const query = graphql`
   query ProductsPageQuery {
-    lunitas: file(name: { eq: "marquesa" }) {
+    lunitas: file(name: { eq: "lunitas" }) {
+      childImageSharp {
+        fixed(width: 220, height: 220) {
+          ...GatsbyImageSharpFixed_withWebp
+        }
+      }
+    }
+    apple: file(name: { eq: "apple-cake" }) {
+      childImageSharp {
+        fixed(width: 220, height: 220) {
+          ...GatsbyImageSharpFixed_withWebp
+        }
+      }
+    }
+    chocolate: file(name: { eq: "chocolate" }) {
+      childImageSharp {
+        fixed(width: 220, height: 220) {
+          ...GatsbyImageSharpFixed_withWebp
+        }
+      }
+    }
+    marquesa: file(name: { eq: "marquesa" }) {
       childImageSharp {
         fixed(width: 220, height: 220) {
           ...GatsbyImageSharpFixed_withWebp

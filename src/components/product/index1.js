@@ -3,11 +3,9 @@ import Img from 'gatsby-image'
 import style from './style.scss'
 
 const Product = ({ title, image, id, price, description, url }) => (
-  <div className="row product">
-    <div className="col-12 col-sm-5">
-      <Img sizes={image} className="card-img-top" />
-    </div>
-    <div className="col-12 col-sm-7 card-body p-3 p-sm-2">
+  <div className="card product">
+    <Img sizes={image} className="card-img-top" />
+    <div className="card-body">
       <h5 className="card-title">{title}</h5>
       <p className="card-text">{description}</p>
       <button
